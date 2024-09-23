@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <script src="main.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            min-height: 100vh;
+            position: relative;
+        }
+        h1 {
+            font-family: 'Times New Roman', sans-serif; 
+            color: #333;
+            font-size: 2em; 
+            text-align: center; 
+            margin-bottom: 20px; 
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 12px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #input-container {
+            width: 50%;
+        }
+        #resultado {
+            margin-top: 30px;
+            margin-left: 80px;
+            background-color: #fff;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            max-height: 250px;
+            overflow-y: auto;
+            flex-shrink: 0;
+        }
+        footer {
+            padding: 1px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        @media (max-width: 600px) {
+            body {
+                flex-direction: column;
+            }
+            #input-container, #resultado {
+                width: 100%;
+            }
+            #resultado {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="input-container">
+        <h1>Calculadora de IP</h1>
+        <label for="ip"><b>Dirección IP:</b></label>
+        <input type="text" id="ip" placeholder="Ej: 192.168.1.1">
+        
+        <label for="mascara"><b>Número de Máscara:</b></label>
+        <input type="number" id="mascara" min="0" max="32">
+        
+        <button onclick="mostrarResultados()">Calcular</button>
+    </div>
+
+    <div id="resultado"></div>
+    
+    <footer>
+        <p>&copy; 2024 Manuel Alejandro Terreros Rodríguez</p>
+    </footer>
+</body>
+</html>
